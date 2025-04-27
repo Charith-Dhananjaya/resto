@@ -4,6 +4,8 @@ import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
+console.log("adawdw");
+
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
@@ -27,10 +29,15 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
+
+    const id = window.location.hash.slice(1);
+    console.log(id);
+    if(!id) return;
+
     //!Loading recipe
     renderSpinner(recipeContainer);
     const res = await fetch(
-      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
       // 'https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e897b'
     );
     const data = await res.json();
@@ -149,10 +156,15 @@ const showRecipe = async function () {
             </svg>
           </a>
         </div>`;
+        recipeContainer.innerHTML = '';
     recipeContainer.insertAdjacentHTML('afterbegin', markup);
   } catch (err) {
     alert(err);
   }
 };
 
-showRecipe();
+
+['haschange', 'load'].forEach((ev) => window.addEventListener(ev, showRecipe));
+
+window.addEventListener('hashchange', showRecipe);
+window.addEventListener('load', showRecipe);
