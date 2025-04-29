@@ -4,7 +4,7 @@ import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
-console.log("adawdw");
+console.log("ujmg");
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -166,5 +166,5 @@ const showRecipe = async function () {
 
 ['haschange', 'load'].forEach((ev) => window.addEventListener(ev, showRecipe));
 
-window.addEventListener('hashchange', showRecipe);
-window.addEventListener('load', showRecipe);
+// window.addEventListener('hashchange', showRecipe);
+// window.addEventListener('load', showRecipe);
