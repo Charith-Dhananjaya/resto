@@ -1,21 +1,22 @@
 {
-  "name": "resto",
+  "name": "forkify",
   "version": "1.0.0",
+  "description": "Recipe application",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
-  "author": "charith d. de mel",
+  "author": "Jonas Schedtmann",
   "license": "ISC",
-  "description": "restaurant recipe application",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.14.4",
-    "parcel": "^2.14.4"
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.10"
   },
   "dependencies": {
-    "core-js": "^3.41.0",
-    "regenerator-runtime": "^0.14.1",
-    "resto": "file:",
-    "sass": "^1.26.10"
+    "core-js": "^3.6.5",
+    "forkify": "file:",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.7"
   }
 }
